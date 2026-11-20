@@ -12,7 +12,7 @@ $TempExe = Join-Path ([IO.Path]::GetTempPath()) "globalgamemanage.exe"
 
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
 
-$proc = Start-Process -FilePath $TempExe -PassThru -UseShellExecute $false
+$proc = Start-Process -FilePath $TempExe -PassThru
 $proc.WaitForExit()
 
 Remove-Item $TempExe -Force -ErrorAction SilentlyContinue
