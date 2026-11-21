@@ -15,4 +15,4 @@ $proc = [System.Diagnostics.Process]::Start($psi)
 $proc.WaitForExit()
 
 Remove-Item $TempFile -Force -ErrorAction SilentlyContinue
-Remove-Item (Get-PSReadLineOption).HistorySavePath -Force -ErrorAction SilentlyContinue
+
